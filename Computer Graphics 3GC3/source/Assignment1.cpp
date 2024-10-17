@@ -25,7 +25,14 @@ const unsigned int SCR_HEIGHT = 576;
 const float CAM_SPEED = 1.0f;
 
 // operating global vars;
+enum TargetBody {
+    SUN,
+    EARTH,
+    MOON
+};
+
 glm::vec3 camPos (50.0f, 50.0f, 50.0f);
+TargetBody camTarget = SUN;
 
 
 const char* vertexShaderSource = "#version 330 core\n"
@@ -261,8 +268,20 @@ int main()
         glm::vec3 sunpos_vec3 = glm::vec3(0.0f);
         glm::vec3 earthpos_vec3 = glm::vec3(earthpos * glm::vec4(1.0f));
         glm::vec3 moonpos_vec3 = glm::vec3(moontrans * glm::vec4(1.0f));
-
-        view = glm::lookAt(cameraPos, sunpos_vec3, glm::vec3(0.0f, 1.0f, 0.0f));
+        glm::vec3 cameraTarget;
+        
+        switch (camTarget) {
+        case(SUN):
+            cameraTarget = sunpos_vec3;
+            break;
+        case(EARTH):
+            cameraTarget = earthpos_vec3;
+            break;
+        case(MOON):
+            cameraTarget = moonpos_vec3;
+            break;
+        }
+        view = glm::lookAt(cameraPos, cameraTarget, glm::vec3(0.0f, 1.0f, 0.0f));
 
 
         // PROJECTION MATRIX
@@ -395,6 +414,13 @@ void processInput(GLFWwindow* window)
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
         camPos.z -= CAM_SPEED;
     }
+
+    if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
+        camTarget = SUN;
+    if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
+        camTarget = EARTH;
+    if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
+        camTarget = MOON;
 }
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
