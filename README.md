@@ -4,6 +4,7 @@ Assignments for McMaster Software Engineering 3GC3: Computer Graphics. The assig
 
 ### Assignment 1: Solar System Simulation
 Small demo focused on the basics of OpenGL (shaders, transformations, buffers, linear algebra for graphics.)
+
 Tweaks:
 - Added ability to move camera around using wasdqe
 - Plan to add:
