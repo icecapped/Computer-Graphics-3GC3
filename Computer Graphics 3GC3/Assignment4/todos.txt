@@ -1,0 +1,57 @@
+TODO 2:
+Vector3D oc = ray.origin() - m_center;
+auto half_b = dot(oc, ray.direction());
+auto a = ray.direction().length_squared();
+auto c = oc.length_squared() - m_radius * m_radius;
+
+auto discr = half_b * half_b - a * c;
+
+// and fill in hit result
+if (discr < 0) return hit_result; // no hit
+
+hit_result.m_t = ((-1) * half_b - sqrt(discr)) / ray.direction().length_squared();
+if (hit_result.m_t < min_t || hit_result.m_t > max_t) return hit_result; // too close or far
+
+hit_result.m_isHit = true;
+hit_result.m_hitPos = ray.origin() + hit_result.m_t * ray.direction();
+hit_result.m_hitNormal = (hit_result.m_hitPos - m_center) / m_radius;
+hit_result.m_hitMaterial = m_pMaterial;
+
+
+
+TODO 3:
+    for (shared_ptr<Sphere> s_ptr : m_spheres) {
+        // call sphere->hit(...)
+        HitResult s_hit = s_ptr.get()->hit(ray, min_t, max_t);
+        if (!hit_result.m_isHit) hit_result = s_hit;
+        else
+            if(s_hit.m_isHit)
+                hit_result = s_hit.m_t < hit_result.m_t ? s_hit : hit_result;
+        
+    }
+
+
+
+TODO 4:
+// pick random x, y, z, check if valid points in a hemisphere aligned with normal
+float x, y, z, dist;
+Vector3D diffuse_dir;
+do {
+    x = 1 - random_float() * 2;
+    y = 1 - random_float() * 2;
+    z = 1 - random_float() * 2;
+    dist = sqrt(x * x + y * y + z * z);
+    diffuse_dir = Vector3D(x, y, z);
+}
+// check if in sphere and in the correct hemisphere
+while(dist > 1 || dot(diffuse_dir, hit.m_hitNormal) < 0);
+
+diffuse_dir = normalize(diffuse_dir);
+
+res.m_ray = Ray(hit.m_hitPos, diffuse_dir);
+
+
+TODO 5:
+Vector3D specular_dir = ray.direction() - 2 * dot(ray.direction(), hit.m_hitNormal) * hit.m_hitNormal;
+
+res.m_ray = Ray(hit.m_hitPos, specular_dir);
