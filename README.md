@@ -18,7 +18,7 @@ Tweaks:
 - Added ability to move camera around using wasdqe
 - Added hotkeys for switching focus between sun/earth/moon (1, 2, 3)
 - Plan to add:
-  - time multiplier adjustment on some other keys
+  - time multiplier hotkeys
 
 ---
 
