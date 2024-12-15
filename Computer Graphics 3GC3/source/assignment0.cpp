@@ -1,4 +1,6 @@
-/*#include <glad/glad.h>
+/* Not an interesting file 
+
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>

@@ -1,6 +1,6 @@
-#include "Assignment4/Assignment4.h"
+#include "Assignments.h"
 
 
 int main() {
-	
+	A1::run();
 }

@@ -1,3 +1,5 @@
+#include "Assignments.h"
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -78,7 +80,7 @@ bool setupShader(GLuint shaderProgram, GLenum shaderType, const char** shaderSou
     return true;
 }
 
-int run()
+int A1::run()
 {
     // glfw init
     glfwInit();

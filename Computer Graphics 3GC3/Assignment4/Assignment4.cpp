@@ -1,10 +1,11 @@
-#include "Assignment4.h"
+#include "../source/Assignments.h"
 
 #include "Camera.h"
 #include "World.h"
 
 #include <iostream>
 #include <fstream>
+
 
 void write_color_to_file(std::ostream& out, Vector3D pixel_color, int samples_per_pixel)
 {
@@ -36,7 +37,7 @@ Vector3D ray_hit_color(Ray& r, World& world, int max_light_bounce_num)
     return Vector3D(1, 1, 1);
 }
 
-int run()
+int A4::run()
 {
     int width = 768;
     int height = 540;

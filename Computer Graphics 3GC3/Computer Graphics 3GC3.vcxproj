@@ -146,18 +146,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Assignment2.cpp" />
-    <ClCompile Include="Assignment3.cpp" />
     <ClCompile Include="Assignment4\Assignment4.cpp" />
     <ClCompile Include="glad\src\glad.c" />
-    <ClCompile Include="source\assignment0.cpp" />
+    <ClCompile Include="source\Assignment0.cpp" />
     <ClCompile Include="source\Assignment1.cpp" />
+    <ClCompile Include="source\Assignment2.cpp" />
+    <ClCompile Include="source\Assignment3.cpp" />
     <ClCompile Include="source\Main.cpp" />
     <ClCompile Include="source\tutorial.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assignment4\Camera.h" />
-    <ClInclude Include="Assignment4\Assignment4.h" />
     <ClInclude Include="Assignment4\Material.h" />
     <ClInclude Include="Assignment4\Ray.h" />
     <ClInclude Include="Assignment4\Sphere.h" />
@@ -169,6 +168,7 @@
     <ClInclude Include="include\KHR\khrplatform.h" />
     <ClInclude Include="include\stb_image\stb_image.h" />
     <ClInclude Include="include\tiny_obj_loader\tiny_obj_loader.h" />
+    <ClInclude Include="source\Assignments.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
