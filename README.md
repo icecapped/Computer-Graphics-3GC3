@@ -26,11 +26,11 @@ Tweaks:
 ## Assignment 3: Amy and the Bucket are at a Disco
 > Topics: Model loading, Blinn-Phong lighting, texture mapping
 
-A dynamic scene with a few loaded .obj models highlighted with rotating spotlights
+A dynamic scene with loaded .obj models highlighted with rotating spotlights
 
 ---
 ![alt text](thumbnail/all.png)
 ## Assignment 4: Raytracing Demo
 > Topics: Raytracing
 
-Raytracing randomly generated spheres above a floor (modeled as a really big sphere). Includes specular and diffuse reflection.
+Raytracing randomly generated spheres above a floor. Includes specular and diffuse reflection.
