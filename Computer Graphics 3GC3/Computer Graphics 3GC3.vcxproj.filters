@@ -77,5 +77,8 @@
     <ClInclude Include="Assignment4\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Assignment4\Assignment4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

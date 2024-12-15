@@ -1,3 +1,5 @@
+#include "Assignment4.h"
+
 #include "Camera.h"
 #include "World.h"
 
@@ -34,7 +36,7 @@ Vector3D ray_hit_color(Ray& r, World& world, int max_light_bounce_num)
     return Vector3D(1, 1, 1);
 }
 
-int main()
+int run()
 {
     int width = 768;
     int height = 540;
@@ -80,5 +82,6 @@ int main()
     }
 
     std::cout << "Rraytracing done!" << std::endl << "ppm saved at " << result_ppm_path << std::endl;
+    return 0;
 }
 

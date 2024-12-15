@@ -78,7 +78,7 @@ bool setupShader(GLuint shaderProgram, GLenum shaderType, const char** shaderSou
     return true;
 }
 
-int main()
+int run()
 {
     // glfw init
     glfwInit();
